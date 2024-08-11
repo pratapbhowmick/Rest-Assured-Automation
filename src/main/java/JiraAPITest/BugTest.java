@@ -15,7 +15,7 @@ import Utility.PropertyReader;
 public class BugTest {
 	public static void main(String[] args) throws FileNotFoundException, IOException { // TODO Auto-generated method stub
 		RestAssured.baseURI="https://rahulshettyacademy-team.atlassian.net/";
-		String AuthorisationToken= PropertyReader.getProperty("AuthorisationToken");
+		String AuthorisationToken= PropertyReader.getProperty("src\\main\\resources\\Credentials\\JiraAPICredentials.properties","AuthorisationToken");
 		String createIssueResponse 	= given()		
 				.header("Content-Type","application/json")		
 				.header("Authorization",AuthorisationToken)		
@@ -48,7 +48,7 @@ public class BugTest {
 		String addAttachmentResponse= given()			
 			.pathParam("id", issueId)			
 			.header("X-Atlassian-Token","no-check")			
-			.header("Authorization",AuthorisationToken)			
+			.header("Authorization",AuthorisationToken)	
 			.multiPart("file",new File("src\\main\\java\\JiraAPITest\\jira-bpm.png"))
 			.multiPart("file",new File("src\\main\\java\\JiraAPITest\\VS-1.png"))
 			.log().all()			
