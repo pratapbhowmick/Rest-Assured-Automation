@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="LibraryAPITest.LibraryAPITestCase">
+      <class name="swaggerUser_OperationsAboutUser.User">
         <methods>
-          <include name="addBook"/>
+          <include name="setup"/>
+          <include name="getUpdatedUser"/>
         </methods>
-      </class> <!-- LibraryAPITest.LibraryAPITestCase -->
+      </class> <!-- swaggerUser_OperationsAboutUser.User -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

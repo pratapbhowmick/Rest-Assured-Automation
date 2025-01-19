@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 import java.util.Map;
 public class GetAndPostExamples {
-	@Test(enabled = false)
+	@Test()
 	public void testGet() {
 		baseURI="https://reqres.in/api";
 		given()
@@ -19,7 +19,8 @@ public class GetAndPostExamples {
 		.then()
 			.statusCode(200)
 			.body("data[4].first_name", equalTo("George"))
-			.body("data.first_name", hasItems("George","Rachel"));
+			.body("data.first_name", hasItems("George","Rachel"))
+			.log().all();
 	}
 	@Test
 	public void testPost() {
